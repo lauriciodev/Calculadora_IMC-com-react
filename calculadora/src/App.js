@@ -1,8 +1,7 @@
 import React, { useState } from "react"
+import  _section, {_input,_dflex} from "./Styled"
 
 function App() {
-
-  
 
 
   const TableImc = () =>{
@@ -48,15 +47,24 @@ function App() {
 
   const Altura = (a,sa) =>{
     return(
-      <input type="text" value={a} onChange={(e)=>sa(e.target.value)} placeholder="digite sua altura" />
+      <>
+      <p>altura</p>
+       <_input type="text" value={a} onChange={(e)=>sa(e.target.value)} placeholder="digite sua altura" />
+      </>
+     
     )
   }
 
 
   const peso = (p,sp) =>{
     return (
-      <input type="text" value={p} onChange={(e)=>sp(e.target.value)} placeholder="digite seu peso" />
+      <>
+      <p>peso</p>
+      <_input type="text" value={p} onChange={(e)=>sp(e.target.value)} placeholder="digite seu peso" />
+      </>
+
     )
+      
   }
 
   const caluclarImc =(a,p,sr)=>{
@@ -90,15 +98,17 @@ function App() {
   const [res,setRes] = useState(0);
 
   return (
-  <>
-  {peso(pes,setPes)} <br/>
-  <br/>
-  {Altura(alt,setAlt)}
+  <_section>´
+    <_dflex>
+     {peso(pes,setPes)} 
+     {Altura(alt,setAlt)}
+    </_dflex>
+ 
   {caluclarImc(alt,pes,setRes)}
   {fres(res)}
   {TableImc()}
 
-  </>
+  </_section>
   );
 }
 
