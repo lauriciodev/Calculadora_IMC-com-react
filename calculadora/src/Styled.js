@@ -23,6 +23,7 @@ width: 50px;
 
 export const _dflex = styled.div`
 display: flex;
+
 gap: 10px;
 & > p{
     color:  blueviolet;
